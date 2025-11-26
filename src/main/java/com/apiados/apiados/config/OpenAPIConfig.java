@@ -13,21 +13,25 @@ public class OpenAPIConfig {
     @Bean
     public OpenAPI apiadosOpenAPI() {
         return new OpenAPI()
-                .info(new Info()
-                        .title("API Apiados - Impacto Urbano Positivo") 
-                        .description("Esta API é o backend da plataforma **Apiados**.\n\n" +
-                                     "Aqui você encontra todos os endpoints para gerenciar o sistema de melhorias urbanas.\n" +
-                                     "**Funcionalidades:**\n" +
-                                     "- 👤 **Usuários:** Cadastro, login e perfil.\n" +
-                                     "- 🏙️ **Projetos:** Criação e listagem de demandas urbanas.\n" +
-                                     "- ⭐ **Votos:** Sistema de votação para priorizar melhorias.")
-                        .version("1.0.0")
-                        .contact(new Contact()
-                                .name("Equipe Apiados")
-                                .url("https://github.com/MatheusV2021/POO-PIUP")
-                                .email("contato@apiados.com"))
-                        .license(new License()
-                                .name("Apache 2.0")
-                                .url("http://springdoc.org")));
+            .info(new Info()
+                .title("API Apiados - Impacto Urbano Positivo")
+                .description("""
+                        Esta API é o backend da plataforma **Apiados**.
+                        
+                        Aqui você encontra todos os endpoints para gerenciar o sistema de melhorias urbanas.
+                        
+                        **Funcionalidades:**
+                        - 👤 **Usuários:** Cadastro, login e perfil.
+                        - 🏙️ **Projetos:** Criação e listagem de demandas urbanas.
+                        - ⭐ **Votos:** Sistema de votação para priorizar melhorias.
+                        """)
+                .version("1.0.0")
+                .contact(new Contact()
+                    .name("Equipe Apiados")
+                    .url("https://github.com/MatheusV2021/POO-PIUP")
+                    .email("contato@apiados.com"))
+                .license(new License()
+                    .name("Apache 2.0")
+                    .url("http://springdoc.org")));
     }
 }
