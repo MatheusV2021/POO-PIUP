@@ -4,11 +4,13 @@ import com.apiados.apiados.model.Usuario;
 import com.apiados.apiados.service.UsuarioService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import com.apiados.apiados.dto.LoginDTO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/usuarios")
 @RequiredArgsConstructor
 public class UsuarioController {
@@ -18,6 +20,16 @@ public class UsuarioController {
     @PostMapping
     public ResponseEntity<Usuario> criar(@RequestBody Usuario usuario) {
         return ResponseEntity.ok(usuarioService.criar(usuario));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> fazerLogin(@RequestBody LoginDTO dadosLogin) {
+        try {
+            Usuario usuario = usuarioService.login(dadosLogin.getEmail(), dadosLogin.getPassword());
+            return ResponseEntity.ok(usuario);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(401).body(e.getMessage());
+        }
     }
 
     @GetMapping

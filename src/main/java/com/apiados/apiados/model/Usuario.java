@@ -15,4 +15,11 @@ public class Usuario {
     private String email;
     private String senha;
     private String tipo; 
+    private String nascimento;
+    private String genero;
+    private String deficiencia;
+    private String cep;
+    private String cidade;
+    private String bairro;
+    private String telefone;
 }
