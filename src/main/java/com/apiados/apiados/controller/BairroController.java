@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/bairros")
+@CrossOrigin(origins = "*")
 @RequiredArgsConstructor
 public class BairroController {
 

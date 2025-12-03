@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/ideias")
+@CrossOrigin(origins = "*")
 @RequiredArgsConstructor
 public class IdeiaController {
 
